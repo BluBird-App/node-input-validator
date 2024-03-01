@@ -3,7 +3,7 @@ import { isObject } from './obj.util.js';
 export function reallyEmpty(value: any): boolean {
   const str = (value === undefined || value === null ? "" : value).toString();
 
-  return str.length === 0;
+  return str.length === 0 && value !== '';
 }
 
 export function mergeDeep(target: any, ...sources: any): void {
