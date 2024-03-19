@@ -1,8 +1,10 @@
 import { isObject } from './obj.util.js';
 
 export function reallyEmpty(value: any): boolean {
+  if (Array.isArray(value)) {
+    return false;
+  }
   const str = (value === undefined || value === null ? "" : value).toString();
-
   return str.length === 0 && value !== '';
 }
 
